@@ -1,0 +1,28 @@
+app_user:
+    resource: "@AppBundle/Resources/Config/Routing/user.yml"
+    prefix: /
+    
+app_publication:
+    resource: "@AppBundle/Resources/Config/Routing/publication.yml"
+    prefix: /
+    
+app_envia_mensaje:
+    resource: "@AppBundle/Resources/Config/Routing/envia_mensaje.yml"
+    prefix: /
+    
+#app_homepage:
+#    path: /
+#    defaults: { _controller: AppBundle:User:login }
+#    
+app_mensaje_privado:
+    resource: "@AppBundle/Resources/Config/Routing/mensaje_privado.yml"
+    prefix: /
+    
+    
+app_notificacion:
+    resource: "@AppBundle/Resources/Config/Routing/notificacion.yml"
+    prefix: /
+    
+app_homepage:
+    path: /
+    defaults: { _controller: AppBundle:Portada:inicio }

@@ -1,0 +1,17 @@
+home_publication:
+    path: /home
+    defaults: { _controller: AppBundle:Publication:index}
+    
+borra_publicacion:
+    path: /publicacion/borra/{id}
+    defaults: { _controller: AppBundle:Publication:borraPublicacion, id:null }
+    
+    
+cierra_publicacion:
+    path: /publicacion/cierra/{id}
+    defaults: { _controller: AppBundle:Publication:cierraPublicacion, id:null }
+    
+cuenta_mensajes:
+    path: /cuenta/mensajes/{id}
+    defaults: { _controller: AppBundle:Publication:getContador,id:null }
+    

@@ -1,0 +1,82 @@
+
+{% extends "AppBundle:Layouts:layout.html.twig" %}
+
+{% block javascripts %}
+	{{ parent() }}
+	{#	<script  src="{{ asset('assets/js/custom/home.js')}}"></script>#}
+	{#<script  src="{{ asset('assets/js/custom/comun.js')}}"></script>#}
+{% endblock %}
+{% block content %}
+	<div class="col-lg-10 box-default box-perfil">
+		<h1 class="box-header">Mi perfil</h1>
+		<div class="avatar">
+			{% if user.imagen == null %}
+
+				<img src="{{ asset('assets/images/default.png' )}}" />
+			{% else %}
+				<img src="{{ asset('uploads/usuarios/'~user.imagen )}}" />
+
+			{% endif %} 
+
+		</div>
+		<div class="nombre-apellidos">
+			<h2> {{ user.nombre }} {{ user.apellidos }}</h2>
+			<div class="clearfix"></div>
+			<span class="nick">{{ user.nick}}</span>
+		</div>
+
+		<div class="bio">
+			{{ user.biografia}} 
+		</div>
+
+		<h1 class="box-header">Mis valoraciones</h1>
+
+		<div class="box-content">
+
+			{% for comentario in pagination %}
+				<div class=" col-lg-12 publication-item">
+
+					<div class="avatar">
+						{% if comentario.emisor.imagen == null %}
+
+							<img src="{{ asset('assets/images/default.png' )}}" />
+						{% else %}
+							<img src="{{ asset('uploads/usuarios/'~comentario.emisor.imagen )}}" />
+
+						{% endif %} 
+
+					</div>
+					Emisor: <a href="{{path("user_perfil",{'nick': comentario.emisor.nick})}}">{{ comentario.emisor.nombre }}</a>
+
+					{#<br>
+					Nombre: {{ comentario.usuario.nombre }}#}
+					<br>
+					Comentario: &nbsp "{{ comentario.comentario }}" 
+					<br>
+					Fecha: {{ comentario.fecha|date('d-m-Y') }}
+
+					<br>
+					Valoración: {{ comentario.nota }}
+
+<hr/>
+
+				</div>
+				
+			{% endfor %}
+
+		</div>
+
+
+
+
+
+		<div class="navigation">
+			{{ knp_pagination_render(pagination) }}
+
+		</div>
+
+		<div class="clearfix">
+		</div>
+	</div>
+
+{% endblock %}

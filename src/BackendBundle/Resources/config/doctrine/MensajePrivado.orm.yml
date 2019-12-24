@@ -1,0 +1,93 @@
+BackendBundle\Entity\MensajePrivado:
+    type: entity
+    table: mensaje_privado
+    indexes:
+        fk_mensaje_emisor:
+            columns:
+                - emisor
+        fk_mensaje_receptor:
+            columns:
+                - receptor
+                
+        fk_foreign_key_publicacion:
+            columns:
+                -publicacion
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        mensaje:
+            type: text
+            nullable: true
+            length: null
+            options:
+                fixed: false
+        createtAt:
+            type: datetime
+            nullable: true
+            column: createt_at
+        archivo:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        imagen:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        leido:
+            type: string
+            nullable: true
+            length: 3
+            options:
+                fixed: false
+        createdAt:
+            type: datetime
+            nullable: true
+            column: created_at
+            
+        
+            
+    manyToOne:
+        emisor:
+            targetEntity: Usuario
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                emisor:
+                    referencedColumnName: id
+            orphanRemoval: false
+        receptor:
+            targetEntity: Usuario
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                receptor:
+                    referencedColumnName: id
+            orphanRemoval: false
+        publicacion:
+            targetEntity: Publicacion
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                publicacion:
+                    referencedColumnName: id
+            orphanRemoval: false    
+            
+            
+    lifecycleCallbacks: {  }

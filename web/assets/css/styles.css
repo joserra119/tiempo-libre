@@ -1,0 +1,449 @@
+/*GENERALES*/
+body{
+	background: #eee;
+
+
+}
+.portada{
+	background-color: lightblue;
+	
+}
+/* HEADER */
+.menu{
+	z-index:100;
+
+}
+.navbar-collapse .avatar{
+	background : white;
+	border-radius: 500px;
+	width: 30px;
+	height: 30px;
+	overflow: hidden;
+	float: left;
+	margin-right: 12px;
+	margin-top: -5px;
+
+}
+.navbar-collapse .avatar img{
+	height: 100%;
+	text-align: center;
+	width: 100%;
+}
+
+
+/*REGISTRO*/
+
+.box-form, .box-default {
+
+	border:1px solid #ccc;
+	padding:20px;
+	margin:0px auto;
+	float:none;
+	background: white;
+
+}
+
+/*GENTE  Y TIMELINE*/
+
+/*.box-users .avatar{
+	margin-left: 10%;
+	margin-top: 2%;
+}*/
+.user{
+    margin-top:4%;
+}
+
+.publication-item .avatar {
+	background : #eee;
+	border-radius : 550px;
+	width: 75px;
+	height: 75px;
+	overflow: hidden;
+	float : left;
+}
+.publication-item .avatar img,
+.user-item .avatar img{
+	height : 100%;
+	text-align: center;
+	width: 100%;
+}
+
+.user-item .user-item-content{
+	padding: 10px;
+	/*margint-left: 85px;*/
+
+}
+
+
+.publication-content{
+	margin-left: 15%;
+
+}
+/*HOME*/
+
+#timeline{
+	margin-right: 20px;
+	min-height: 750px;
+	padding-bottom: 20px;
+
+}
+
+#user-card{
+	margin-bottom: 20px;
+	padding: 10px;
+
+}
+.box-users .avatar{
+	background: #eee;
+	border-radius: 500px;
+	width: 75px;
+	height: 75px;
+	overflow: hidden;
+	float: left;
+
+}
+#user-card .avatar{
+	background: #eee;
+	border-radius: 500px;
+	width: 75px;
+	height: 75px;
+	overflow: hidden;
+	float: left;
+
+}
+.box-users .avatar img{
+	height: 100%;
+	text-align: center;
+	width: 100%;
+
+
+}
+
+#user-card .avatar img{
+	height: 100%;
+	text-align: center;
+	width: 100%;
+
+
+
+}
+
+#user-card .avatar img.default{
+	height: 100%;
+	text-align: center;
+	opacity: 0.5;
+	width: 100%;
+}
+
+#user-card .name-surname{
+	float:left;
+	font-size: 20px;
+	padding:10px;
+
+}
+
+#user-card .name-surname a{
+	color:black;
+}
+
+#user-card .nickname{
+	opacity: 0.7;
+
+}
+
+.box-header{
+	border-bottom: 1px solid #ccc;
+	padding:10px;
+	padding-top:0px;
+	font-size: 25px;
+}
+
+#new-publication input,
+
+#new-publication textarea{
+	margin-bottom: 10px;
+
+}
+
+.pub-date{
+	color: gray;
+	font-size:14px;
+
+}
+
+.asunto{
+	color:black;
+	font-size: 18px;
+
+
+}
+
+.color{
+
+	color: red;
+}
+#ancla-publicacion{
+	display: none;
+
+}
+/*  PERFIL  */
+.box-perfil > .avatar{
+	background:#eee;
+	border-radius: 700px;
+	width: 180px;
+	height: 180px;
+	overflow: hidden;
+	margin: 0px auto;
+
+
+}
+
+.box-perfil > .avatar img{
+	height: 100%;
+	width: 100%;
+	text-align: center;
+
+
+}
+
+.nombre-apellidos{
+	text-align: center;
+
+}
+.bio{
+	text-align: center;
+	padding: 20px;
+	margin-bottom: 20px;
+
+}
+/* MEDIA QUERIES*/
+
+/*@media (max-width: 480px){
+	.box-form{
+		height: 100%;
+		width: 100%;
+		
+	}
+	.box-form label {
+		font-size: 30px;
+		color: green ;
+	}
+	
+	#content{
+		height: 500px;
+		
+	}
+	
+}*/
+
+@media (min-width: 480px) and (max-width: 1024px){
+	#user-card{
+		display:none;
+
+	}
+}
+
+@media all and (min-width: 480px) and  (max-width:1024px){
+	.flash{
+		top:10%;
+		z-index: 1000;
+	}
+
+	#ancla-publicacion{
+		display:block;
+		margin-left:  70%;
+	position:fixed;
+		top:90%;
+		text-align: center;
+		background-color: grey;
+		opacity: 0.8;
+		font-size: 20px;
+		z-index: 1000;
+
+}
+.publication-item, .user-item, .publication-content{
+	text-align: center;
+
+}
+.navbar-collapse .avatar{
+	background : white;
+	border-radius: 500px;
+	width: 60px;
+	height: 60px;
+	overflow: hidden;
+	float: left;
+	margin-right: 12px;
+	margin-top: -5px;
+
+}
+	.box-form, .box-default{
+		width: 100% !important;
+
+	}
+	label{
+		font-size: 50px;
+
+	}
+	.publicacion{
+		font-size: 30px;
+	}
+	.login{
+		font-size: 50px;
+		
+		
+	}
+	.registro{
+		font-size: 50px !important;
+	}
+	.icon-bar {
+   width: 90px !important ;
+    height: 10px !important;
+}
+	.btn-login,.btn-success{
+		width: 30%;
+		font-size: 50px;
+
+	}
+
+.form-bio, .form-control{
+	width: 100%;
+		margin-top: 0;
+		height:150px; 
+		font-size:50px;
+
+}
+
+    .menu{
+		/*        margin:0px;
+				padding:0px;
+				padding-left:5%;
+				display:block;
+				float:none;
+				text-align:left;*/
+		/*		background-color: red;*/
+		position:fixed;
+		top:0;
+		width: 100%;
+
+
+    }
+	#username, #password {
+		width: 100%;
+		margin-top: 0;
+		height:150px; 
+		font-size:50px;
+
+	}
+/*	li a,#titulo{
+		font-size:50px;
+	}
+	.box-form .label{
+		font-size: 50px;
+	}*/
+	#timeline, #new-publication,.box-default, .box-form{
+
+		margin-top: 10%;
+	}
+	
+	#timeline{
+		margin-top:10%;
+		margin-right: 0px;
+	}
+/*	#timeline{
+		width: 50%;
+	}
+	#new-publication{
+		width: 50%;
+	}*/
+}
+
+/*@media screen and (max-width: 600px) {
+  #username, #password {
+    width: 100%;
+	height: 150%;
+    margin-top: 0;
+	background-color:  red;
+  }
+  .box-form{
+	  width: 100%;
+	  background-color: red;
+  }*/
+/*}*/
+
+/* slider */
+.mySlides {display: none;}
+.slideshow-container {
+  max-width: 700px;
+  position: relative;
+  margin: auto;
+  margin-top: 2%;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 4.5s;
+  animation-name: fade;
+  animation-duration: 4.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+.botones_portada{
+	
+	text-align: center;
+	/*background-color: white;*/
+}
+/*
+#login, #registro{
+	background-color: white;
+}*/
+
+
+
+@media (max-width: 991px) {
+	.navbar-header {
+
+		float: none;
+	}
+	.navbar-toggle {
+		display: block;
+	}
+	.navbar-collapse {
+		border-top: 1px solid transparent;
+		box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+	}
+	.navbar-collapse.collapse {
+		display: none!important;
+	}
+	.navbar-nav {
+		float: none!important;
+		margin: 7.5px ;
+	}
+	.navbar-nav>li {
+		float: none;
+	}
+	.navbar-nav>li>a {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.navbar-text {
+		float: none;
+		margin: 15px 0;
+	}
+	/* since 3.1.0 */
+	.navbar-collapse.collapse.in {
+		display: block!important;
+	}
+	.collapsing {
+		overflow: hidden!important;
+	}
+}

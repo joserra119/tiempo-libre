@@ -1,0 +1,17 @@
+mensaje_privado_index:
+    path: /mensaje-privado/{id}
+    defaults: { _controller:AppBundle:MensajePrivado:index ,id:null}
+ 
+mensaje_privado_enviado:
+    path: /mensaje_privado_enviado
+#    path: /mensaje_privado/enviado
+    defaults: { _controller:AppBundle:MensajePrivado:enviado }
+    
+mensaje_privado_notificacion:
+    path: /mensaje_privado/get
+    defaults: { _controller:AppBundle:MensajePrivado:noLeidos }
+ 
+mensajes_privados:
+     path: /mensajes_privados/get
+     defaults: { _controller:AppBundle:MensajePrivado:getTodosMensajesPrivados }
+ 

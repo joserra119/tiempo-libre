@@ -1,0 +1,4 @@
+envia_mensaje:
+    path: /envia_mensaje
+    defaults: { _controller:AppBundle:MensajePrivado:envia_mensaje }
+#    methods: [POST]

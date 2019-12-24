@@ -1,0 +1,61 @@
+{% extends "AppBundle:Layouts:layout.html.twig" %}
+
+{% block javascripts %}
+	{{ parent() }}
+	
+{% endblock %}
+
+{% block content %}
+	<div class="container">
+		<div class="col-lg-12 box-default">
+
+
+			<div class="box-content box-users">
+			<h1 class="box-header">Usuarios</h1>
+
+				{% for user in pagination %}
+
+						<div class="col-lg-12  user-item">
+							{% if app.user.id != user.id %}
+							<div class="avatar">
+
+								{% if user.imagen == null %}
+									<img src="{{ asset('assets/images/default.png' )}}" />
+								{% else %}
+									<img src="{{ asset('uploads/usuarios/'~user.imagen )}}" />
+								{% endif %}   	
+							</div>
+							<div class="user">
+								<label class="login" >Usuario_id: </label>&nbsp; <label class="publicacion">{{ user.id }}</label>
+								{#								<br> Nombre : &nbsp; {{ nombre }}#}
+								<br> <label class="login" >Nombre : &nbsp;</label> <a href="{{path("user_perfil",{'nick': user.nick})}}"><label class="publicacion" >{{user.nombre}}</label></a>
+							</div>
+							<a href="{{path("user_borra",{'id': user.id})}}"">
+							<button
+									type="submit"
+									class="btn-borra-usuario glyphicon glyphicon-trash "
+									aria-hidden="true"
+									data-toggle="tooltip"
+									data-placement="bottom"
+									title="Borrar usuario"
+									name="usuario_borrado">
+
+								</button></a>
+							{% endif %}
+							<hr/>
+						</div>
+
+					<div class="clearfix"></div>
+							
+
+				{% endfor %}
+
+			</div>
+			<div class="navigation">
+
+				{{ knp_pagination_render(pagination) }}
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+{% endblock %}

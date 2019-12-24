@@ -1,0 +1,124 @@
+
+{% extends "AppBundle:Layouts:layout.html.twig" %}
+
+{% block javascripts %}
+	{{ parent() }}
+	<script  src="{{ asset('assets/js/custom/home.js')}}"></script>
+	{#<script  src="{{ asset('assets/js/custom/comun.js')}}"></script>#}
+{% endblock %}
+{% block content %}
+
+	<div class="container">
+
+
+		<div id= "timeline" class="col-lg-7 col-md-12 col-sm-12  box-default  pull-left">
+<h1>Mis publicaciones</h1>
+			<div class="box-content col-lg-12 col-md-12 col-sm-12">
+
+				{% for publication in pagination %}
+					<div class=" col-lg-12 publication-item">
+
+						{% if(publication.cerrada!=1) %}
+							<div class="avatar">
+								{% if publication.usuario.imagen == null %}
+
+									<img src="{{ asset('assets/images/default.png' )}}" />
+								{% else %}
+									<img src="{{ asset('uploads/usuarios/'~publication.usuario.imagen )}}" />
+
+								{% endif %} 
+
+							</div>
+							<div class="publication-content">
+
+								<label class="login">{{ publication.tipo }}
+									
+								</label>
+
+								<br>
+								<label class="login">{{ publication.asunto }}
+									<span class="pub-date">
+										&nbsp <label class="publicacion">Publicado {{ publication.createtAt|long_time }} </label>
+									</span>
+								</label>
+
+								<br>
+								<label> Publicación: </label > <label class="publicacion"> {{ publication.text }}</label> 
+
+								<br>
+								<label>Nombre:</label> <label class="publicacion">{{ publication.usuario.nombre }}</label>
+								<br>
+								<label> Día libre: </label><label class="publicacion"> {{ publication.diaLibre|date('d') }}</label>
+								<br>
+								<label>Mes libre: </label><label class="publicacion">{{ publication.diaLibre|date('m') }} </label>
+								<br>
+								<label> Año libre:</label><label class="publicacion"> {{ publication.diaLibre|date('Y') }} </label>
+								<br> 
+								<label>Hora inicio : </label>&nbsp;<label class="publicacion">{{publication.horaInicio|date('H:i') }}</label>
+								<br> 
+								<label> Hora fin : </label>&nbsp;<label class="publicacion">{{publication.horaFin|date('H:i') }}</label>
+								<br>
+							<label>	Provincia: </label> <label class="publicacion">{{ publication.provincia }} </label>
+
+
+								<br>
+								{% if (publication.usuario.id is defined ) and (publication.usuario.id == app.user.id) %}
+									<a href=""><span data-id = "{{ publication.id }}" class= "btn-delete-pub glyphicon glyphicon-trash" aria-hidden= "true"></span></a>
+
+									<br>
+									<a href="{{path("mensaje_privado_index",{'publicacion': publication.id})}}">Ver respuestas</a>
+									<br>
+									<a href="{{path("cierra_publicacion",{'publicacion': publication.id})}}">Cerrar publicación</a>
+
+
+								{% endif %}	
+								{#<div class="clearfix"></div>#}
+
+							</div>
+							<hr/>
+						{% endif %}
+					</div>
+				{% endfor %}
+
+				{#{% for publication in mensajes %}
+					{{ mensajes.emisor.nombre }}
+				{% endfor %}#}
+
+				<div class="clearfix" ></div>
+				<div class="navigation">
+					{{ knp_pagination_render(pagination) }}
+
+				</div>
+				<div class="clearfix" ></div>
+			</div>
+			<a href="#nueva-publicacion"><label id="ancla-publicacion">CREAR PUBLICACIÓN</label></a>
+		</div>
+	
+		<div id="user-card" class="col-lg-4 col-md-4 col-sm-4 box-default pull-left">
+			<div class="avatar">
+
+				{% if app.user.imagen == null %}
+					<img src="{{ asset('assets/images/default.png' )}}" />
+				{% else %}
+					<img src="{{ asset('uploads/usuarios/'~app.user.imagen )}}" />
+				{% endif %}   
+
+			</div>
+			<div class="clearfix" ></div>
+			<div class="name-surname">	
+				<a href="{{path("user_perfil",{'nick': app.user.nick})}}">  {{ app.user.nombre }} {{ app.user.apellidos }} </a>
+				<div class="clearfix"></div>
+				<span class="nickname">{{app.user.nick}}  </span>
+				<div class="clearfix" ></div>
+			</div>
+			<div class="clearfix" ></div>
+		</div>
+		
+			<div id="new-publication" class="col-lg-4 col-md-12 col-sm-12 pull-left box-default">
+				<a name="nueva-publicacion"></a>
+			<h1 class="box-header">Crear publicación</h1>
+			{{ form_start(form, {action : '', 'method' : 'POST'}) }}
+			{{ form_end(form) }}
+		</div>
+	</div>
+{% endblock %}

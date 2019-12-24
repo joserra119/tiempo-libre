@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html lang="es">
+	<head class="portada">
+		<meta charset="utf-8"   name="viewport" content="width=device-width, initial-scale=1"/>
+		<title>
+			{% block title %} TIEMPO LIBRE {% endblock %}
+
+		</title>
+
+		{% block stylesheets %}
+			<!-- Estilos CSS  -->
+			<link href="{{ asset('assets/bootstrap/css/bootstrap.min.css')}}" type="text/css" rel="stylesheet">
+			<link href="{{ asset('assets/css/bootstrap.cosmo.min.css')}}" type="text/css" rel="stylesheet">
+			<link href="{{ asset('assets/css/styles.css')}}" type="text/css" rel="stylesheet">
+		{% endblock %}
+		{% block javascripts %}
+			<!-- javascript -->
+			<script type="text/javascript">
+				var URL = "{{ app.request.getSchemeAndHttpHost() }}/tiempo-libre/web/app_dev.php";
+			</script>
+
+			<script  src="{{ asset('assets/js/jquery.min.js')}}"></script>
+			<script  src="{{ asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
+			<script  src="{{ asset('assets/js/jquery-ias.min.js')}}"></script>
+			<script  src="{{ asset('assets/js/custom/comun.js')}}"></script>
+			<script  src="{{ asset('assets/js/custom/slider.js')}}"></script>
+			{#			<script  src="{{ asset('assets/js/custom/home.js')}}"></script>#}
+
+		{% endblock %}	
+	</head>
+	<body class="portada">
+
+		<div class="slideshow-container">
+
+			<div class="mySlides fade">
+
+				<img src="{{ asset('assets/images/imagen1.jpg')}}" style="width:100%">
+
+			</div>
+
+			<div class="mySlides fade">
+
+				<img src="{{ asset('assets/images/imagen2.jpg')}}" style="width:100%">
+
+			</div>
+
+			<div class="mySlides fade">
+
+				<img src="{{ asset('assets/images/imagen3.jpg')}}" style="width:100%">
+
+			</div>
+
+			{#<div class="mySlides fade">
+				<div class="numbertext">3 / 3</div>
+				<img src="{{ asset('assets/images/imagen4.jpg')}}" style="width:100%">
+				<div class="text">Caption Three</div>
+			</div>#}
+
+		</div>
+		<br>
+
+
+		<div class="botones_portada"> 
+			<a   class="entrar_portada"   href="{{path("login")}}">
+				<span id="login" class="glyphicon glyphicon-log-in" aria-hidden="true"></span> 
+				&nbsp;
+				Entrar
+			</a>
+			<a   href="{{path("register")}}">
+				<span id="registro" class="glyphicon glyphicon-user" aria-hidden="true"></span> 
+				&nbsp; 
+				Registro
+
+			</a>
+		</div>
+	</body>
+
+</html>

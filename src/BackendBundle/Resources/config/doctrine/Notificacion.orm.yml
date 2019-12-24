@@ -1,0 +1,56 @@
+BackendBundle\Entity\Notificacion:
+    type: entity
+    table: notificaciones
+    indexes:
+        fk_notificaciones_usuarios:
+            columns:
+                - usuario_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        tipo:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        tipoId:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: tipo_id
+        leido:
+            type: string
+            nullable: true
+            length: 3
+            options:
+                fixed: false
+        createtAt:
+            type: datetime
+            nullable: true
+            column: createt_at
+        extra:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+    manyToOne:
+        usuario:
+            targetEntity: Usuario
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                usuario_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

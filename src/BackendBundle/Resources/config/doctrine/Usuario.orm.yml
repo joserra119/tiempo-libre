@@ -1,0 +1,74 @@
+BackendBundle\Entity\Usuario:
+    type: entity
+    table: usuarios
+    repositoryClass: BackendBundle\Repositorios\getUsuarios
+    uniqueConstraints:
+        usuarios_campos_unicos:
+            columns:
+                - email
+                - nick
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        role:
+            type: string
+            nullable: true
+            length: 20
+            options:
+                fixed: false
+        email:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        nombre:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        apellidos:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        password:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        nick:
+            type: string
+            nullable: true
+            length: 50
+            options:
+                fixed: false
+        biografia:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        activo:
+            type: string
+            nullable: true
+            length: 2
+            options:
+                fixed: false
+        imagen:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

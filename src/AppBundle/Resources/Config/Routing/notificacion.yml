@@ -1,0 +1,3 @@
+notificacion_page:
+    path: /notificaciones
+    defaults: { _controller: AppBundle:Notificacion:index }

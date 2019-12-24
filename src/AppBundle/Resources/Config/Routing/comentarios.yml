@@ -1,0 +1,7 @@
+
+    
+    
+cierra_publicacion:
+    path: /publicacion/cierra/{id}
+    defaults: { _controller: AppBundle:Publication:cierraPublicacion, id:null }
+    

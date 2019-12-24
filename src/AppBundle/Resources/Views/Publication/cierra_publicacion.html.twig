@@ -1,0 +1,22 @@
+
+{% extends "AppBundle:Layouts:layout.html.twig" %}
+
+{% block javascripts %}
+	{{ parent() }}
+
+	{#<script  src="{{ asset('assets/js/custom/comun.js')}}"></script>#}
+	<script  src="{{ asset('assets/js/custom/cierra_publicacion.js')}}"></script>
+{% endblock %}
+{% block content %}
+	
+	<div class="container">
+		
+		
+
+			<h1 class="box-header">Cerrar publicación</h1>
+		
+			{{ form_start(form, {action : '', 'method' : 'POST'}) }}
+			{{ form_end(form) }}
+		</div>
+	</div>
+{% endblock %}

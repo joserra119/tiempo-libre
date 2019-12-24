@@ -1,0 +1,12 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: mysql-joserra119.alwaysdata.net
+    database_port: null
+    database_name: joserra119_tiempo-libre
+    database_user: 194611
+    database_password: Joserra_119
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    secret: ThisTokenIsNotSoSecretChangeIt

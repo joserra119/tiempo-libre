@@ -1,0 +1,14 @@
+parameters:
+    
+
+services:
+    
+    app.notificacion_servicio:
+        class: AppBundle\Services\NotificacionesService
+        arguments: ["@doctrine.orm.entity_manager"]
+        
+    long_time.twig_extension:
+        class: AppBundle\Twig\LongTimeExtension
+        public: false
+        tags:
+            - { name: twig.extension }
